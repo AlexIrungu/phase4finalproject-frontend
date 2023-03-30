@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '../../css/Form.css'
+import '../Form.css'
 import Loading from '../../components/Loading'
 import SearchBar from '../../components/search/SearchBar'
 import BookResult from '../../components/search/BookResult'
