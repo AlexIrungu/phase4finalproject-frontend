@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { parseDate } from '../../helpers/helpers'
+import { parseDate } from '/home/benjah/Development/code/phase-4/phase4finalproject-frontend/client/src/helpers/helper.js'
 import { Grid, Typography, Button } from '@mui/material'
 import { Timeline } from '@mui/lab'
 import Goal from '../../components/book/Goal'

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import '../../css/Book.css'
+import '/home/benjah/Development/code/phase-4/phase4finalproject-frontend/client/src/css/Books.css'
 import NotFound from '../NotFound'
 import Loading from '../../components/Loading'
 import AddToWishlistModal from '../../components/form/AddToWishlistModal'
