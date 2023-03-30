@@ -4,7 +4,7 @@ import EditIcon from '@mui/icons-material/Edit'
 import ClearIcon from '@mui/icons-material/Clear'
 import BookmarkIcon from '@mui/icons-material/Bookmark'
 import QuestionModal from '../form/QuestionModal'
-import Comments from '../../containers/books/Comments'
+import Comments from '../../containers/books.js/Comments'
 
 const Question = ({
   guideQuestion,
