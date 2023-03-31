@@ -1,10 +1,10 @@
-# Best Books | A Book Club App
+# Inkwell Library | A Book App with a club feature
 
 This app lets you create book clubs with your friends where you can track goals, create discussion questions, and comment on the discussion questions.
 
 ## Front-end Best Books Interface
 
-You can use this app in conjunction with my book club app API [see the repo](https://github.com/christine-contreras/best-books-api)
+You can use this app in conjunction with my book club app API [see the repo](https://github.com/AlexIrungu/phase4finalproject-frontend)
 
 ## Technologies Used In This App
 
