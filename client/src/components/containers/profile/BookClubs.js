@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Grid, Typography, Button } from '@mui/material'
 
 import CreateBookClubModal from '../../components/form/CreateBookClubModal'
-import BookClubCard from '../../components/bookclub/BookClubCard'
+import BookClubCard from '../../bookclub/BookClubCard'
 
 const BookClubs = ({ user, fetchUser }) => {
   const [bookclubs, setBookClubs] = React.useState(user ? user.bookclubs : [])
