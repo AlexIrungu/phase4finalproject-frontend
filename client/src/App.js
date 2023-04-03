@@ -62,7 +62,7 @@ function App() {
   }
 
   const handleFetchRecommendations = () => {
-    fetch('https://goodreads-books.p.rapidapi.com/lists?page=1', {
+    fetch('https://inkwell-library.onrender.com/lists?page=1', {
       method: 'GET',
       headers: {
         'x-rapidapi-host': 'goodreads-books.p.rapidapi.com',
@@ -81,7 +81,7 @@ function App() {
   const handleListSearch = (listId) => {
     setLoading(true)
 
-    fetch(`https://goodreads-books.p.rapidapi.com/lists/${listId}`, {
+    fetch(`https://inkwell-library.onrender.com/lists/${listId}`, {
       method: 'GET',
       headers: {
         'x-rapidapi-host': 'goodreads-books.p.rapidapi.com',
@@ -105,7 +105,7 @@ function App() {
   const handleBookSearch = (searchPhrase) => {
     setLoading(true)
     fetch(
-      `https://goodreads-books.p.rapidapi.com/search?q=${searchPhrase}&page=1`,
+      `https://inkwell-library.onrender.com/search?q=${searchPhrase}&page=1`,
       {
         method: 'GET',
         headers: {
@@ -128,7 +128,7 @@ function App() {
   const handleFetchBook = (bookId) => {
     setCurrentBook(null)
     setLoading(true)
-    fetch(`https://goodreads-books.p.rapidapi.com/books/${bookId}`, {
+    fetch(`https://inkwell-library.onrender.com/books/${bookId}`, {
       method: 'GET',
       headers: {
         'x-rapidapi-host': 'goodreads-books.p.rapidapi.com',
