@@ -28,7 +28,7 @@ function Footer() {
             InkWell-Library
           </Typography>
           <div>
-          Inkwell Library is a book app designed to cater to book lovers who want to explore different genres and authors. The app offers an extensive collection of books ranging from classic literature to modern-day bestsellers. With Inkwell Library, users can easily search for books by author, title, or genre, and save their favorite titles to personalized reading lists. The app also features book recommendations and reviews from other readers, providing a community-driven experience. With a simple and user-friendly interface, Inkwell Library makes reading and discovering new books easy and accessible. Whether you're a casual reader or a bookworm, Inkwell Library has something for everyone.
+          <p>Inkwell Library is a book app designed to cater to book lovers who want to explore different genres and authors. The app offers an extensive collection of books ranging from classic literature to modern-day bestsellers. With Inkwell Library, users can easily search for books by author, title, or genre, and save their favorite titles to personalized reading lists. The app also features book recommendations and reviews from other readers, providing a community-driven experience. With a simple and user-friendly interface, Inkwell Library makes reading and discovering new books easy and accessible. Whether you're a casual reader or a bookworm, Inkwell Library has something for everyone.</p>
           </div>
         </Box>
 

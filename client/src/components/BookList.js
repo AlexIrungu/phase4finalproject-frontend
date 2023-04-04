@@ -102,6 +102,10 @@ let booksList = userBooks.map(stat => {
     getCategories();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const [allBooks, setAllBooks] = useState(true)
+  const [allCategories, setAllCategories] = useState(false)
+  const [allValue, setAllValue] = useState("all")
+
   // include filters for categories here!!!
   return (
     <Box width="80%" margin="80px auto">
@@ -122,11 +126,14 @@ let booksList = userBooks.map(stat => {
           },
         }}
       >
+
         {/* displays the various filters available for the books.  */}
-        <Tab onClick={()=>{}} label="All" value="all" />
-        <Tab onClick={()=>{}} label="Fiction" value="fiction" />
-        <Tab onClick={()=>{}} label="Thrillers" value="thriller" />
-        <Tab onClick={()=>{}} label="Adult" value="adult" />
+        <Tab onClick={()=>{setAllValue("all")}} 
+        label="All" value="all" />
+        <Tab onClick={()=>{setAllValue("categories")}} 
+        label="Categories" value="categories" />
+        {/* <Tab onClick={()=>{}} label="Thrillers" value="thriller" />
+        <Tab onClick={()=>{}} label="Adult" value="adult" /> */}
       </Tabs>
       <Box
         margin="0 auto"
@@ -136,16 +143,25 @@ let booksList = userBooks.map(stat => {
         rowGap="20px"
         columnGap="1.33%"
       >
-        {/* {value === "all" &&
+        {/* /* {value === "all" &&
           books.map((book) => <BookCard book={book} key={book.id} />)} */
           // <ul>
            
-          // </ul>
-          <ul>
-              {booksList} 
-            {/* {categoriesList} */}
-          </ul>
-          }
+          // </ul> */
+        }
+          
+              { allValue === "all" && (
+              <ul> {booksList}
+                </ul> )
+                 } 
+
+                {allValue === "categories" && ( 
+              <ul> {categoriesList}
+                </ul> )} 
+
+          
+
+          
       </Box>
     </Box>
   );
