@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import PrivateRoutes from "./components/PrivateRoutes";
 
+
 // starts each page you navigate to at the top
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ const ScrollToTop = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 };
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -56,6 +58,7 @@ function App() {
 
   return (
     <div className="app">
+      
       <Navbar user={user} onLogout={handleLogout} />
       <ScrollToTop />
       <Routes>
@@ -98,6 +101,7 @@ function App() {
       </Routes>
       <CartMenu user={user} />
       <Footer />
+     
     </div>
   );
 }

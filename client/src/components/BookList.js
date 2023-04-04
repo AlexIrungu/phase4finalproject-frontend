@@ -16,7 +16,7 @@ const BookList = () => {
     setValue(newValue);
   };
 
-  let[userbooks, setUserBooks] = useState([])
+  let[userBooks, setUserBooks] = useState([])
 
   // fetch books data from the backend
   const getBooks = () => {
@@ -33,7 +33,7 @@ const BookList = () => {
       .catch((err) => console.log(err));
   };
 
-let bookList = userbooks.map(book => {
+let bookList = userBooks.map(book => {
   return(
     <li>{book.title}</li>
   )
@@ -53,11 +53,16 @@ let [userCategories, setUserCategories] = useState([])
 
   let[currentCategory, setCurrentCategory] = useState("")
 
-  userCategories.map((category)=>{
-      console.log(category.books.title)
+  userBooks.map((books)=>{
+    console.log(books.title)
   })
 
-   //console.log(userCategories)
+  userCategories.map((category)=>{
+      console.log(category.genre)
+  })
+
+   console.log(userCategories)
+   console.log(userBooks);
 
  let fantasyBooksList = userCategories.filter((category) => {return category.genre === "Fantasy"});
 
@@ -72,6 +77,17 @@ let [userCategories, setUserCategories] = useState([])
     <li>{item.title}</li>
   )
 })
+
+let booksList = userBooks.map(stat => {
+  return(
+    <ul className="books-list">
+    <li>
+      <img src={stat.imageURL} /></li>
+      <li>{stat.title}</li>
+      </ul>
+  )
+})
+  
 
   let categoriesList = userCategories.map(item => {
     return(
@@ -122,9 +138,12 @@ let [userCategories, setUserCategories] = useState([])
       >
         {/* {value === "all" &&
           books.map((book) => <BookCard book={book} key={book.id} />)} */
+          // <ul>
+           
+          // </ul>
           <ul>
-            
-            {categoriesList}
+              {booksList} 
+            {/* {categoriesList} */}
           </ul>
           }
       </Box>
