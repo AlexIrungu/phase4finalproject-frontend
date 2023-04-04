@@ -20,6 +20,8 @@ const BookList = () => {
 
   // fetch books data from the backend
   const getBooks = () => {
+    // setUserBooks(fetchedBooks)
+    // dispatch(setBooks(fetchedBooks))
     axios
       .get("http://localhost:3000/books")
       .then((res) => {
@@ -52,18 +54,18 @@ let [userCategories, setUserCategories] = useState([])
   let[currentCategory, setCurrentCategory] = useState("")
 
   userCategories.map((category)=>{
-    //  console.log(category[0].books)
+      console.log(category.books.title)
   })
 
-  // console.log(userCategories)
+   //console.log(userCategories)
 
  let fantasyBooksList = userCategories.filter((category) => {return category.genre === "Fantasy"});
 
-//  console.log(fantasyBooksList)
+ //console.log(fantasyBooksList.books)
 
 
  let fantasyBooks = fantasyBooksList[0];
-//  console.log(fantasyBooks)
+  //console.log(fantasyBooks)
 
  let fantasyList = fantasyBooksList.map(item => {
   return(
@@ -74,6 +76,7 @@ let [userCategories, setUserCategories] = useState([])
   let categoriesList = userCategories.map(item => {
     return(
       <li>{item.genre}</li>
+      
     )
   })
 
@@ -105,10 +108,9 @@ let [userCategories, setUserCategories] = useState([])
       >
         {/* displays the various filters available for the books.  */}
         <Tab onClick={()=>{}} label="All" value="all" />
-        <Tab onClick={()=>{
-        }} label="Fiction" value="fiction" />
-        <Tab label="Thrillers" value="thriller" />
-        <Tab label="Adult" value="adult" />
+        <Tab onClick={()=>{}} label="Fiction" value="fiction" />
+        <Tab onClick={()=>{}} label="Thrillers" value="thriller" />
+        <Tab onClick={()=>{}} label="Adult" value="adult" />
       </Tabs>
       <Box
         margin="0 auto"
@@ -121,7 +123,8 @@ let [userCategories, setUserCategories] = useState([])
         {/* {value === "all" &&
           books.map((book) => <BookCard book={book} key={book.id} />)} */
           <ul>
-            {fantasyList}
+            
+            {categoriesList}
           </ul>
           }
       </Box>

@@ -28,7 +28,7 @@ const BookDetails = () => {
       .get(`http://localhost:3000/books/${bookId}`)
       .then((res) => {
         const fetchedBook = res.data;
-        // console.log(fetchedBook);
+         console.log(fetchedBook);
         dispatch(setBook(fetchedBook));
       })
       .catch((err) => console.log(err));

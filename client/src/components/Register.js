@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Register = ({ onRegister }) => {
-  const [name, setName] = useState("");
+  const [first_name, setFirst_Name] = useState("");
+  const [last_name, setLast_Name] = useState("")
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -17,7 +18,8 @@ const Register = ({ onRegister }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name,
+        first_name,
+        last_name,
         email,
         password,
         password_confirmation: passwordConfirmation,
@@ -41,9 +43,19 @@ const Register = ({ onRegister }) => {
           <label>Enter your name</label>
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter username"
+            value={first_name}
+            onChange={(e) => setFirst_Name(e.target.value)}
+            placeholder="Enter firstname"
+          />
+        </div>
+        
+        <div>
+          <label>Enter your last name</label>
+          <input
+            type="text"
+            value={last_name}
+            onChange={(e) => setLast_Name(e.target.value)}
+            placeholder="Enter lastname"
           />
         </div>
         <div>

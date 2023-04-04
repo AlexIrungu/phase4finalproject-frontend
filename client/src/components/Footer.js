@@ -2,6 +2,7 @@ import { useTheme } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
 import { shades } from "../theme";
 
+
 function Footer() {
   const {
     palette: { neutral },
@@ -24,10 +25,10 @@ function Footer() {
             mb="30px"
             color={shades.secondary[500]}
           >
-            Sunny-Books
+            InkWell-Library
           </Typography>
           <div>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          Inkwell Library is a book app designed to cater to book lovers who want to explore different genres and authors. The app offers an extensive collection of books ranging from classic literature to modern-day bestsellers. With Inkwell Library, users can easily search for books by author, title, or genre, and save their favorite titles to personalized reading lists. The app also features book recommendations and reviews from other readers, providing a community-driven experience. With a simple and user-friendly interface, Inkwell Library makes reading and discovering new books easy and accessible. Whether you're a casual reader or a bookworm, Inkwell Library has something for everyone.
           </div>
         </Box>
 

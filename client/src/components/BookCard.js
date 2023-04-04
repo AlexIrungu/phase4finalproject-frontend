@@ -80,9 +80,7 @@ const BookCard = ({ book, width }) => {
       <Box mt="3px">
         <Typography variant="subtitle2" color={neutral.dark}>
           {book.category.genre}
-          {/* {category
-            .replace(/([A-Z])/g, "$1")
-            .replace(/^./, (str) => str.toUpperCase())} */}
+         
         </Typography>
         <Typography>{title}</Typography>
         <Typography fontWeight="bold">KES {price}</Typography>

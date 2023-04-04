@@ -8,9 +8,9 @@ import {
 } from "@mui/icons-material";
 import LogoutSharpIcon from "@mui/icons-material/LogoutSharp";
 import LoginSharpIcon from "@mui/icons-material/LoginSharp";
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
+// import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+// import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import { useNavigate } from "react-router-dom";
 import { shades } from "../theme";
 import { setIsCartOpen, resetCart } from "./state";
@@ -54,11 +54,11 @@ const Navbar = ({ user, onLogout }) => {
           sx={{ "&:hover": { cursor: "pointer" } }}
           color={shades.secondary[500]}
         >
-          <IconButton sx={{ color: "green" }}>
-            <WbSunnyOutlinedIcon />
-            <AutoStoriesIcon />
+          <IconButton sx={{ color: "crimson" }}>
+            {/* <WbSunnyOutlinedIcon />
+            <AutoStoriesIcon /> */}
           </IconButton>
-          Sunny Books
+          InkWell Library
         </Box>
         <Box
           display="flex"
@@ -72,7 +72,7 @@ const Navbar = ({ user, onLogout }) => {
           <IconButton sx={{ color: "black" }}>
             <PersonOutline />
           </IconButton>
-          <Badge
+          {/* <Badge
             badgeContent={cart.length}
             color="secondary"
             invisible={cart.length === 0}
@@ -91,7 +91,7 @@ const Navbar = ({ user, onLogout }) => {
             >
               <AddShoppingCartIcon />
             </IconButton>
-          </Badge>
+          </Badge> */}
           {user && (
             <IconButton onClick={handleLogout} sx={{ color: "red" }}>
               <LogoutSharpIcon />

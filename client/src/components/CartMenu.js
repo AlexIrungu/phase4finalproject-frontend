@@ -38,7 +38,7 @@ const CartMenu = ({ user }) => {
   // console.log(bookHolder);
 
   const handleCheckoutAndAddToOrder = async (e) => {
-    const fillOrder = await fetch(`https://inkwell-library.onrender.com/orders`, {
+    const fillOrder = await fetch(`http://localhost:3000/orders`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -57,7 +57,7 @@ const CartMenu = ({ user }) => {
       };
       console.log(data);
 
-      fetch("https://inkwell-library.onrender.com/user_books", {
+      fetch("http://localhost:3000/user_books", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
