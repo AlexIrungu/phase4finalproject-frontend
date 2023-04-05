@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Register from "./components/Register";
-import Checkout from "./components/Checkout";
+// import Checkout from "./components/Checkout";
 import BookDetails from "./components/BookDetails";
-import Confirmation from "./components/Confirmation";
+// import Confirmation from "./components/Confirmation";
 import Navbar from "./components/Navbar";
 import CartMenu from "./components/CartMenu";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import PrivateRoutes from "./components/PrivateRoutes";
-
+import BookList from "./components/BookList";
 
 // starts each page you navigate to at the top
 const ScrollToTop = () => {
@@ -20,15 +21,16 @@ const ScrollToTop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-};
 
+  return null;
+};
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     // auto-login user
-    fetch("/me", {
+    fetch("http://localhost:3000/me", {
       method: "GET",
     }).then((res) => {
       if (res.ok) {
@@ -58,21 +60,18 @@ function App() {
 
   return (
     <div className="app">
-      
       <Navbar user={user} onLogout={handleLogout} />
       <ScrollToTop />
       <Routes>
-        {/* <Route exact element={<PrivateRoutes user={user} />}>
-          <Route exact path="/checkout/success" element={<Confirmation />} />
-          <Route exact path="/checkout" element={<Checkout />} />
-        </Route> */}
-
+        
+        <Route element={<PrivateRoutes user={user} />}>
+        </Route>
         <Route
           exact
           path="/login"
           element={
             !user ? (
-              <Login setUser onLogin={handleLogin} />
+              <Login onLogin={handleLogin} />
             ) : (
               <Navigate to="/" />
             )
@@ -89,19 +88,14 @@ function App() {
             )
           }
         />
-        <Route
-          exact
-          path="/"
-          element={<Home user={user} />}
-        />
-        <Route exact path="/checkout" element={<Checkout />} />
-        <Route exact path="/checkout/success" element={<Confirmation />} />
-        <Route exact path="book/:bookId" element={<BookDetails />} />
+        <Route exact path="/" element={<Home user={user} />} />
+        {/* <Route exact path="/checkout" element={<Checkout />} /> */}
+        {/* <Route exact path="/checkout/success" element={<Confirmation />} /> */}
+        <Route exact path="/book/:bookId" element={<BookDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CartMenu user={user} />
       <Footer />
-     
     </div>
   );
 }

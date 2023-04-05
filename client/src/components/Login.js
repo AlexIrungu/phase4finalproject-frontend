@@ -8,7 +8,7 @@ const Login = ({ onLogin }) => {
 
   function handleLogin(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("https://inkwell-library.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -4,9 +4,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
-
-// Documentation for carousel: https://github.com/leandrowd/react-responsive-carousel
-
 // import all images from assets folder
 const importAll = (r) =>
   r.keys().reduce((acc, item) => {

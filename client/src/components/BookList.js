@@ -23,7 +23,7 @@ const BookList = () => {
     // setUserBooks(fetchedBooks)
     // dispatch(setBooks(fetchedBooks))
     axios
-      .get("http://localhost:3000/books")
+      .get("https://inkwell-library.onrender.com/books")
       .then((res) => {
         const fetchedBooks = res.data;
          console.log(fetchedBooks);
@@ -43,7 +43,7 @@ let [userCategories, setUserCategories] = useState([])
 
   // fetch categories
   const getCategories = () => {
-    axios.get("http://localhost:3000/categories").then((res) => {
+    axios.get("https://inkwell-library.onrender.com/categories").then((res) => {
       const fetchedCategories = res.data;
       setUserCategories(res.data)
       //  console.log(res.data["books"])

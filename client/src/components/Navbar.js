@@ -14,7 +14,8 @@ import LoginSharpIcon from "@mui/icons-material/LoginSharp";
 import { useNavigate } from "react-router-dom";
 import { shades } from "../theme";
 import { setIsCartOpen, resetCart } from "./state";
-
+import { useState } from "react";
+import BookList from "./BookList";
 const Navbar = ({ user, onLogout }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -28,86 +29,98 @@ const Navbar = ({ user, onLogout }) => {
     // reset cart state
     dispatch(resetCart()); 
   };
+  
+  const [allValue, setAllValue] = useState("all");
+  const [allCategories, setAllCategories] = useState(false);
 
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      width="100%"
-      height="60px"
-      backgroundColor="rgba(255,255,255,0.95)"
-      color="black"
-      position="fixed"
-      top="0"
-      left="0"
-      zIndex="1"
-    >
-      <Box
-        width="80%"
-        margin="auto"
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Box
-          onClick={() => navigate("/")}
-          sx={{ "&:hover": { cursor: "pointer" } }}
-          color={shades.secondary[500]}
-        >
-          <IconButton sx={{ color: "crimson" }}>
-            {/* <WbSunnyOutlinedIcon />
-            <AutoStoriesIcon /> */}
-          </IconButton>
-          InkWell Library
-        </Box>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          columnGap="20px"
-          zIndex="2"
-        >
-          <IconButton sx={{ color: "black" }}>
-            <SearchOutlined />
-          </IconButton>
-          <IconButton sx={{ color: "black" }}>
-            <PersonOutline />
-          </IconButton>
-          {/* <Badge
-            badgeContent={cart.length}
-            color="secondary"
-            invisible={cart.length === 0}
-            sx={{
-              "& .Mui-Badge-badge": {
-                right: 5,
-                top: 5,
-                padding: "0, 4px",
-                height: "14px",
-              },
-            }}
+    <div>
+      <nav style={{ backgroundColor: "#D2B48C" }} className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#" onClick={() => navigate("/")}>
+            InkWell Library
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <IconButton
-              onClick={() => dispatch(setIsCartOpen({}))}
-              sx={{ color: "black" }}
-            >
-              <AddShoppingCartIcon />
-            </IconButton>
-          </Badge> */}
-          {user && (
-            <IconButton onClick={handleLogout} sx={{ color: "red" }}>
-              <LogoutSharpIcon />
-            </IconButton>
-          )}
-          {!user && (
-            <IconButton onClick={() => navigate("/login")} sx={{ color: "green" }}>
-              <LoginSharpIcon />
-            </IconButton>
-          )}
-          <IconButton sx={{ color: "black" }}>
-            <MenuOutlined />
-          </IconButton>
-        </Box>
-      </Box>
-    </Box>
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                {/* Use IconButton component from MUI */}
+                <IconButton
+                  sx={{ color: shades.primary }}
+                  onClick={() => navigate("/login")}
+                >
+                  {user ? (
+                    <LogoutSharpIcon fontSize="large" />
+                  ) : (
+                    <LoginSharpIcon fontSize="large" />
+                  )}
+                </IconButton>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Featured Books
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={() => setAllValue("all")}
+                      
+                    >
+                      All Books
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={() => setAllValue("categories")}
+                     
+          
+                    >
+                      All Categories
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form className="d-flex" role="search">
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-success" type="submit">
+                <SearchOutlined />
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
   );
 };
 

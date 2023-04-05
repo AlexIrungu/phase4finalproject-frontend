@@ -25,7 +25,7 @@ const BookDetails = () => {
 
   const getBook = () => {
     axios
-      .get(`http://localhost:3000/books/${bookId}`)
+      .get(`https://inkwell-library.onrender.com/books/${bookId}`)
       .then((res) => {
         const fetchedBook = res.data;
          console.log(fetchedBook);
@@ -36,7 +36,7 @@ const BookDetails = () => {
 
   const getBooks = () => {
     axios
-      .get("http://localhost:3000/books")
+      .get("https://inkwell-library.onrender.com/books")
       .then((res) => {
         const fetchedBooks = res.data;
         console.log(fetchedBooks);
