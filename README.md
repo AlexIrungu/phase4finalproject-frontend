@@ -35,6 +35,9 @@ This section will guide you through setting up and running this repository on yo
 
          cd phase4finalproject-backend
 
+* Install dependencies
+
+        bundle install  
 * Then start server with 
 
         rails s
