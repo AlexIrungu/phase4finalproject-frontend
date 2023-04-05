@@ -192,3 +192,44 @@ header a {
   width: 100%;
   height: auto;
 }
+
+.home{
+  background-color: rgb(155, 65, 6);
+}
+.box{
+  background-color: rgb(162, 225, 231);
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-size: 1.2rem;
+}
+
+.nav-link:hover {
+  color: #D2B48C !important;
+  background-color: transparent !important;
+}
+
+.form-control {
+  border: none;
+  background-color: #D2B48C;
+  color: #fff;
+  padding: .5rem;
+}
+
+.btn-outline-success {
+  border-color: #fff;
+  color: #fff;
+  margin-left: .5rem;
+}
+
+.btn-outline-success:hover {
+  background-color: #fff;
+  color: #D2B48C;
+}

@@ -2,20 +2,20 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Badge, Box, IconButton } from "@mui/material";
 import {
-  PersonOutline,
-  MenuOutlined,
+ 
   SearchOutlined,
 } from "@mui/icons-material";
 import LogoutSharpIcon from "@mui/icons-material/LogoutSharp";
 import LoginSharpIcon from "@mui/icons-material/LoginSharp";
-// import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-// import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
+
 import { useNavigate } from "react-router-dom";
 import { shades } from "../theme";
 import { setIsCartOpen, resetCart } from "./state";
 import { useState } from "react";
 import BookList from "./BookList";
+import '../index.css'
+
+
 const Navbar = ({ user, onLogout }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -53,11 +53,7 @@ const Navbar = ({ user, onLogout }) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
+             
               <li className="nav-item">
                 {/* Use IconButton component from MUI */}
                 <IconButton

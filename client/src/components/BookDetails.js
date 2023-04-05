@@ -51,6 +51,7 @@ const BookDetails = () => {
   }, [bookId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
+    <div className="box">
     <Box width="80%" m="80px auto">
       <Box display="flex" flexWrap="wrap" columnGap="40px">
         {/* images to render */}
@@ -59,7 +60,7 @@ const BookDetails = () => {
             alt={book?.title}
             width="100%"
             height="100%"
-            src={book?.image_url}
+            src={book?.imageURL}
             style={{ objectFit: "contain" }}
           />
         </Box>
@@ -67,8 +68,8 @@ const BookDetails = () => {
         {/* actions */}
         <Box flex="1 1 50%" mb="40px">
           <Box display="flex" justifyContent="space-between">
-            <Box>Home</Box>
-            <Box>Prev Next</Box>
+            {/* <Box>Home</Box>
+            <Box>Prev Next</Box> */}
           </Box>
 
           <Box m="65px 0 25px 0">
@@ -111,7 +112,7 @@ const BookDetails = () => {
               <FavoriteBorderOutlinedIcon />
               <Typography sx={{ ml: "5px" }}>ADD TO WISHLIST</Typography>
             </Box>
-            <Typography>CATEGORIES: {book?.category?.genre}</Typography>
+            {/* <Typography>CATEGORIES: {book?.category?.genre}</Typography> */}
           </Box>
         </Box>
       </Box>
@@ -148,6 +149,7 @@ const BookDetails = () => {
         </Box>
       </Box>
     </Box>
+    </div>
   );
 };
 

@@ -18,7 +18,7 @@ const Login = ({ onLogin }) => {
       if (res.ok) {
         res.json().then((user) => {
           onLogin(user);
-          navigate("/");
+          navigate("/login");
         });
       }
     });

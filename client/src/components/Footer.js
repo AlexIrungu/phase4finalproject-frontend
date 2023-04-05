@@ -1,75 +1,131 @@
-import React from "react"
+import React from "react";
 import { useTheme } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
 import { shades } from "../theme";
+import styled from "@emotion/styled";
 
+const FooterContainer = styled(Box)`
+  margin-top: 70px;
+  padding: 40px 0;
+  background-color: ${(props) => props.theme.palette.neutral.light};
+`;
+
+const ContentWrapper = styled(Box)`
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: clamp(20px, 30px, 40px);
+`;
+
+const Column = styled(Box)`
+  width: clamp(20%, 30%, 40%);
+`;
+
+const Title = styled(Typography)`
+  font-weight: bold;
+`;
+
+const Description = styled(Typography)`
+  color: ${shades.secondary[500]};
+`;
+
+const FooterLink = styled(Typography)`
+  margin-bottom: 30px;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 function Footer() {
   const {
     palette: { neutral },
   } = useTheme();
   return (
-    <Box marginTop="70px" padding="40px 0" backgroundColor={neutral.light}>
-      <Box
-        width="80%"
-        margin="auto"
-        display="flex"
-        justifyContent="space-between"
-        flexWrap="wrap"
-        rowGap="30px"
-        columnGap="clamp(20px, 30px, 40px)"
-      >
-        <Box width="clamp(20%, 30%, 40%)">
-          <Typography
-            variant="h4"
-            fontWeight="bold"
-            mb="30px"
-            color={shades.secondary[500]}
-          >
+    <FooterContainer>
+      <ContentWrapper>
+        <Column>
+          <Title variant="h4" mb="30px">
             InkWell-Library
-          </Typography>
-          <div>
-          <p>Inkwell Library is a book app designed to cater to book lovers who want to explore different genres and authors. The app offers an extensive collection of books ranging from classic literature to modern-day bestsellers. With Inkwell Library, users can easily search for books by author, title, or genre, and save their favorite titles to personalized reading lists. The app also features book recommendations and reviews from other readers, providing a community-driven experience. With a simple and user-friendly interface, Inkwell Library makes reading and discovering new books easy and accessible. Whether you're a casual reader or a bookworm, Inkwell Library has something for everyone.</p>
-          </div>
-        </Box>
+          </Title>
+          <Description variant="body1">
+            Inkwell Library is a book app designed to cater to book lovers who
+            want to explore different genres and authors. The app offers an
+            extensive collection of books ranging from classic literature to
+            modern-day bestsellers. With Inkwell Library, users can easily
+            search for books by author, title, or genre, and save their favorite
+            titles to personalized reading lists. The app also features book
+            recommendations and reviews from other readers, providing a
+            community-driven experience. With a simple and user-friendly
+            interface, Inkwell Library makes reading and discovering new books
+            easy and accessible. Whether you're a casual reader or a bookworm,
+            Inkwell Library has something for everyone.
+          </Description>
+        </Column>
 
-        <Box>
-          <Typography variant="h4" fontWeight="bold" mb="30px">
+        <Column>
+          <Title variant="h4" mb="30px">
             About Us
-          </Typography>
-          <Typography mb="30px">Careers</Typography>
-          <Typography mb="30px">Our Stores</Typography>
-          <Typography mb="30px">Terms & Conditions</Typography>
-          <Typography mb="30px">Privacy Policy</Typography>
-        </Box>
+          </Title>
+          <FooterLink variant="body1" mb="30px">
+            Careers
+          </FooterLink>
+          <FooterLink variant="body1" mb="30px">
+            Our Stores
+          </FooterLink>
+          <FooterLink variant="body1" mb="30px">
+            Terms & Conditions
+          </FooterLink>
+          <FooterLink variant="body1" mb="30px">
+            Privacy Policy
+          </FooterLink>
+        </Column>
 
-        <Box>
-          <Typography variant="h4" fontWeight="bold" mb="30px">
+        <Column>
+          <Title variant="h4" mb="30px">
             Customer Care
-          </Typography>
-          <Typography mb="30px">Help Center</Typography>
-          <Typography mb="30px">Frequently Asked Questions</Typography>
-          <Typography mb="30px">Complaints</Typography>
-          <Typography mb="30px">Track Your Order</Typography>
-          <Typography mb="30px">Corporate & Bulk Purchasing</Typography>
-          <Typography mb="30px">Partner With Us</Typography>
-          <Typography mb="30px">Returns & Refunds</Typography>
-        </Box>
+          </Title>
+          <FooterLink variant="body1" mb="30px">
+            Help Center
+          </FooterLink>
+          <FooterLink variant="body1" mb="30px">
+            Frequently Asked Questions
+          </FooterLink>
+          <FooterLink variant="body1" mb="30px">
+            Complaints
+          </FooterLink>
+          <FooterLink variant="body1" mb="30px">
+            Track Your Order
+          </FooterLink>
+          <FooterLink variant="body1" mb="30px">
+            Corporate & Bulk Purchasing
+          </FooterLink>
+          <FooterLink variant="body1" mb="30px">
+            Partner With Us
+          </FooterLink>
+          <FooterLink variant="body1" mb="30px">
+            Returns & Refunds
+          </FooterLink>
+        </Column>
 
-        <Box width="clamp(20%, 25%, 30%)">
-          <Typography variant="h4" fontWeight="bold" mb="30px">
+        <Column>
+          <Title variant="h4" mb="30px">
             Contact Us
-          </Typography>
-          <Typography mb="30px">
-            Physical address: Ngong Lane Plaza, Ngong Road
-          </Typography>
-          <Typography mb="30px" sx={{ wordWrap: "break-word" }}>
-            Email: support@sunny-books.com
-          </Typography>
-          <Typography mb="30px">+254-712-345-678</Typography>
-        </Box>
-      </Box>
-    </Box>
+          </Title>
+          <Description mb="30px">
+            Office Address: Ngong Lane Plaza, Ngong Road
+          </Description>
+          <Description mb="30px" sx={{ wordWrap: "break-word" }}>
+            Email: support@inkwell.com
+          </Description>
+          <Description mb="30px">+254-712-345-678</Description>
+        </Column>
+      </ContentWrapper>
+    </FooterContainer>
   );
 }
 

@@ -84,6 +84,8 @@ let booksList = userBooks.map(stat => {
     <li>
       <img src={stat.imageURL} /></li>
       <li>{stat.title}</li>
+      <li>{stat.publication_date}</li>
+      <li>{stat.publisher}</li>
       </ul>
   )
 })
@@ -91,7 +93,10 @@ let booksList = userBooks.map(stat => {
 
   let categoriesList = userCategories.map(item => {
     return(
+      <ul>
       <li>{item.genre}</li>
+      <li>{item.title}</li>
+      </ul>
       
     )
   })
