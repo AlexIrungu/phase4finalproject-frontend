@@ -60,7 +60,7 @@ export default function Register() {
         return;
       }
     }
-    const response = await fetch("https://inkwell-library.onrender.com/signup", {
+    const response = await fetch("http://localhost:3001/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
